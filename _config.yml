@@ -1,28 +1,28 @@
 # Site Settings
-title                    : "Tian Jingqi"
-description              : "Researcher in AI and Computer Vision with a focus on multimodal systems, deep learning, and computer vision."
+title                    : "Tian Jingqi's Website"
+description              : "Researcher in AI and Computer Vision with a focus on  large language models (LLMs) and multimodal models."
 repository               : "Trilarflagz/Trilarflagz.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
-google_analytics_id      :  # 如果需要Google Analytics, 可以在此处填写ID
+google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
 
 # SEO Related
-google_site_verification :  # 如果使用Google站点验证，请填写此处
-bing_site_verification   :  # 如果使用Bing站点验证，请填写此处
-baidu_site_verification  :  # 如果使用百度站点验证，请填写此处
+google_site_verification :  # get google_site_verification from https://search.google.com/search-console/about
+bing_site_verification   :  # get bing_site_verification from https://www.bing.com/webmasters/about
+baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.baidu.com/login/index?u=/site/index
 
 # Site Author
 author:
   name             : "Tian Jingqi"
-  avatar           : "images/android-chrome-512x512.png"
+  avatar           : "images/profile.jpg"
   bio              : "Sichuan University, Computer Science"
-  location         : "Beijing, China"
-  employer         : "Sichuan University"
+  location         : "Chengdu, China"
+  employer         : 
   pubmed           : 
-  googlescholar    :  # 如果没有 Google Scholar，可以留空
+  googlescholar    :   #"https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
   email            : "jingqi71tian@gmail.com"
-  researchgate     :  # 如果有 ResearchGate 链接，可以在此处添加
+  researchgate     : # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
   codepen          :
