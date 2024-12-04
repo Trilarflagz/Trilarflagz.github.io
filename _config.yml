@@ -16,11 +16,11 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Tian Jingqi"
   avatar           : "images/profile.jpg"
-  bio              : "Sichuan University, Computer Science"
+  bio              : # "Sichuan University, Computer Science"
   location         : "Chengdu, China"
   employer         : 
   pubmed           : 
-  googlescholar    :   #"https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+  googlescholar    : https://scholar.google.com/citations?user=G-IAzhgAAAAJ&hl=en
   email            : "jingqi71tian@gmail.com"
   researchgate     : # e.g., "https://www.researchgate.net/profile/yourprofile"
   uri              :
