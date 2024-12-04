@@ -28,9 +28,9 @@ Jingqi Tian(田景绮) is an undergraduate student in Computer Science College, 
 - *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
  -->
 # 💻 Internships
-- *2024.09 - now*, [Tsinghua Shenzhen International Graduate School](https://www.sigs.tsinghua.edu.cn/en/),[Tsinghua University](https://www.tsinghua.edu.cn/),China.
-- *2023.04 - 2024.07*, [Intelligence and Database System Lab](https://ids-lab-asia.github.io/),[Sichuan University](https://www.scu.edu.cn/),China. 
-- *2023.07 - 2023.08*, [NUS School of Computing](https://www.comp.nus.edu.sg/),[National University of Singapore](https://www.nus.edu.sg/cn),Singapore. 
+- *2024.09 - now*, [Shenzhen International Graduate School](https://www.sigs.tsinghua.edu.cn/en/), [Tsinghua University](https://www.tsinghua.edu.cn/), China.
+- *2023.04 - 2024.07*, [Intelligence and Database System Lab](https://ids-lab-asia.github.io/), [Sichuan University](https://www.scu.edu.cn/), China. 
+- *2023.07 - 2023.08*, [School of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://www.nus.edu.sg/cn), Singapore. 
 
 # 🎖 Awards 
 - Gold Medal, 2024 China Collegiate Programming Contest (CCPC) for Girls
