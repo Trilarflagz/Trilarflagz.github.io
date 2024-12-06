@@ -16,8 +16,7 @@ redirect_from:
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
 
 <span class='anchor' id='about-me'></span>
-Jingqi Tian(田景绮) is an undergraduate student in Computer Science College, expected to graduate in June 2025. Currently, his research interests are in large language models (LLMs) and multimodal models.
-
+I am an undergraduate student in Computer Science and Technology (Top-notch Program, a class of 15 elite students selected from 500+), expected to graduate in June 2025. Currently, my research interests are in large language models (LLMs) and multimodal models.
 
 # 📖 Educations
 - *2021.09 - 2025.06 (Expected)*, B.S. Candidate in Computer Science(**Top Student Program**), <img src='images/scu.png' style='width: 1.2em;'> [Sichuan University](https://www.scu.edu.cn/)
@@ -38,8 +37,8 @@ Jingqi Tian(田景绮) is an undergraduate student in Computer Science College, 
 - Silver Medal, 2024 ICPC China Sichuan Provincial Programming Contest
 - Gold Medal, 2023 ACM Chongqing Provincial Contest
 - First prize, The 15th Blue Bridge Cup software competition,provincial competition
-- National Scholarship
-- First-class Scholarship 
+- National Scholarship (Top 0.2% Nationwide) & Xiaomi Special Scholarship $ First-class Scholarship 
+- Outstanding Student of Sichuan University & Outstanding Cadre of Sichuan University 
 
 # ☎️ Contact
 - Email:  jingqi71tian@gmail.com  / 2021141510118@stu.scu.edu.cn
