@@ -263,8 +263,8 @@ span.highlight {
   img[src*="ddavs.png"],
   img[src*="mag.png"],
   img[src*="ponder.png"] {
-    width: 72% !important;
-    max-width: 260px !important;
+    width: 92% !important;
+    max-width: 320px !important;
   }
 
   /* Move right-floating date to next line for cleaner wrapping */
