@@ -140,6 +140,10 @@ span.highlight {
   background-color: #ffffd0;
 }
 
+.mobile-hero-avatar {
+  display: none;
+}
+
 /* Mobile-friendly layout tweaks */
 @media (max-width: 768px) {
   body,
@@ -185,6 +189,15 @@ span.highlight {
     padding: 14px 14px 0 14px !important;
   }
 
+  .mobile-hero-avatar {
+    display: block !important;
+  }
+
+  /* Hide desktop-side avatar on phones */
+  table[style*="margin-bottom:-40px"] td[style*="padding:2.5%;width:30%;max-width:30%"] {
+    display: none !important;
+  }
+
   table[style*="margin-bottom:-40px"] td[style*="width:30%;max-width:30%"] {
     display: block;
     width: 100% !important;
@@ -210,7 +223,7 @@ span.highlight {
     display: block;
     width: 100% !important;
     max-width: 100% !important;
-    text-align: left !important;
+    text-align: center !important;
     padding: 10px 20px 0 20px !important;
     border-top: none !important;
   }
@@ -224,9 +237,32 @@ span.highlight {
 
   /* Keep logos/thumbnails compact after stacking */
   td[style*="width:30%;max-width:30%"] img {
-    width: 34% !important;
+    width: 36% !important;
     max-width: 130px !important;
     height: auto;
+    display: inline-block;
+  }
+
+  /* Education logos a bit smaller */
+  img[src*="Tsinghua_University_Logo.svg"],
+  img[src*="scu_logo.png"] {
+    width: 28% !important;
+    max-width: 110px !important;
+  }
+
+  /* Internship logos slightly larger than education logos */
+  img[src*="alibaba.png"],
+  img[src*="nus.png"] {
+    width: 42% !important;
+    max-width: 150px !important;
+  }
+
+  /* Publication images larger on mobile */
+  img[src*="ddavs.png"],
+  img[src*="mag.png"],
+  img[src*="ponder.png"] {
+    width: 72% !important;
+    max-width: 260px !important;
   }
 
   /* Move right-floating date to next line for cleaner wrapping */
@@ -235,5 +271,15 @@ span.highlight {
     display: block;
     margin-top: 2px;
     color: #666;
+  }
+
+  /* Polish mobile rhythm */
+  td[width="75%"] ul {
+    margin-top: 6px !important;
+    margin-bottom: 2px !important;
+  }
+
+  td[width="75%"] li {
+    margin-bottom: 4px !important;
   }
 }
