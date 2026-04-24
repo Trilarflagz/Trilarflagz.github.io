@@ -162,7 +162,9 @@ span.highlight {
   }
 
   heading {
-    font-size: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
   }
 
   /* Add side breathing room on narrow screens */
