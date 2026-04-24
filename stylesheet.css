@@ -248,8 +248,8 @@ span.highlight {
   /* Education logos a bit smaller */
   img[src*="Tsinghua_University_Logo.svg"],
   img[src*="scu_logo.png"] {
-    width: 28% !important;
-    max-width: 110px !important;
+    width: 24% !important;
+    max-width: 92px !important;
   }
 
   /* Internship logos slightly larger than education logos */
@@ -263,8 +263,8 @@ span.highlight {
   img[src*="ddavs.png"],
   img[src*="mag.png"],
   img[src*="ponder.png"] {
-    width: 92% !important;
-    max-width: 320px !important;
+    width: 96% !important;
+    max-width: 390px !important;
   }
 
   /* Move right-floating date to next line for cleaner wrapping */
