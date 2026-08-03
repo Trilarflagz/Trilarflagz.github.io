@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="AdaThinkV: Adaptive Thinking for Token-Efficient Video Reasoning">
+  <meta name="keywords" content="AdaThinkV, video reasoning, adaptive thinking, reinforcement learning, multimodal large language models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdaThinkV: Adaptive Thinking for Token-Efficient Video Reasoning</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h3 class="title is-4 publication-title venue-label">AAAI 2027 Submission</h3>
+            <h1 class="title is-2 publication-title">
+              <span class="gradient-title">AdaThinkV</span>: Adaptive Thinking for Token-Efficient Video Reasoning
+            </h1>
+            <div class="is-size-5 publication-authors author-row">
+              <span class="author-block"><a href="https://trilarflagz.github.io/">Jingqi Tian</a><sup>1*</sup>,</span>
+              <span class="author-block"><a href="https://zhang9302002.github.io/">Haoji Zhang</a><sup>1*</sup>,</span>
+              <span class="author-block">Lin Chen<sup>2*</sup>,</span>
+              <span class="author-block">Hongbo Jin<sup>3</sup>,</span>
+              <span class="author-block">Haonan Xu<sup>2</sup>,</span>
+              <span class="author-block">Tianrui Zhu<sup>1</sup>,</span>
+              <span class="author-block">Xingming Shui<sup>1</sup>,</span>
+              <span class="author-block">Shilin Ma<sup>1</sup>,</span>
+              <span class="author-block">Wenjing Yang<sup>2</sup>,</span>
+              <span class="author-block"><a href="https://andytang15.github.io/">Yansong Tang</a><sup>1&#9993;</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors affiliations">
+              <span class="author-block"><sup>1</sup>Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>Alibaba Group,</span>
+              <span class="author-block"><sup>3</sup>Peking University</span>
+            </div>
+            <div class="is-size-6 publication-authors note-row">
+              <span class="author-block"><sup>*</sup>Equal contribution.</span>
+              <span class="author-block"><sup>&#9993;</sup>Corresponding author.</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="./paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/Trilarflagz/AdatokenV" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span><span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <img class="paper-figure wide-figure" src="./static/images/teaser.png" alt="AdaThinkV motivation and qualitative comparison">
+      <figcaption class="figure-caption">
+        <strong>Why does response-mode selection matter?</strong>
+        Always reasoning can overcomplicate simple questions, while confidence routing can stop before collecting evidence needed for compositional reasoning. AdaThinkV learns when explicit reasoning is worth its cost.
+      </figcaption>
+    </div>
+  </div>
+
+  <section class="section compact-section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">TL;DR</h2>
+          <div class="content has-text-justified tldr-box">
+            <p><strong>AdaThinkV teaches a video MLLM to choose between direct answering and explicit reasoning for each question.</strong> ThinkGain estimates whether the accuracy benefit of reasoning justifies its extra output length, while Variance Recovery Policy Optimization (VRPO) expands difficult rollout groups to recover useful reinforcement-learning signals.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered has-text-centered metric-grid">
+        <div class="column"><div class="metric-card"><div class="metric-value">40.79</div><div class="metric-label">Mean accuracy</div></div></div>
+        <div class="column"><div class="metric-card"><div class="metric-value">257.20</div><div class="metric-label">Average output tokens</div></div></div>
+        <div class="column"><div class="metric-card"><div class="metric-value">+2.98</div><div class="metric-label">Accuracy vs. strongest adaptive baseline</div></div></div>
+        <div class="column"><div class="metric-card"><div class="metric-value">-22.7%</div><div class="metric-label">Output tokens vs. that baseline</div></div></div>
+      </div>
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Chain-of-thought reasoning can improve performance on difficult video questions but often wastes decoding tokens on simple ones. AdaThinkV is an adaptive framework for video reasoning that learns whether to reason explicitly without offline difficulty labels, manually tuned confidence thresholds, or an external router. During reinforcement learning, it samples matched rollouts in explicit-reasoning and direct-answering modes. ThinkGain estimates the prompt-level utility of explicit reasoning by balancing its accuracy gain against additional response length, supervising both conditional generation and autonomous mode selection. For difficult prompts, VRPO retains and progressively expands unsuccessful, low-dispersion rollout groups to recover informative signals from prompts that are difficult yet solvable. At inference, AdaThinkV selects a response mode and generates the response in a single autoregressive sequence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <div class="content has-text-centered">
+        <img class="paper-figure" src="./static/images/method_overview.png" alt="AdaThinkV training and inference pipeline">
+        <figcaption class="figure-caption"><strong>AdaThinkV training and inference pipeline.</strong> ThinkGain constructs mode supervision from prompt-matched <code>THINK</code>/<code>ANSWER</code> branches. VRPO progressively allocates more rollouts to groups with weak reward contrast. At inference, the model emits a mode marker and response in one autoregressive sequence.</figcaption>
+      </div>
+      <div class="columns method-cards">
+        <div class="column"><div class="method-card"><h3 class="title is-4">ThinkGain</h3><p>Measures the conditional net utility of explicit reasoning: whether its prompt-level accuracy improvement is worth the additional response length.</p></div></div>
+        <div class="column"><div class="method-card"><h3 class="title is-4">VRPO</h3><p>Retains and expands difficult all-unsuccessful groups, broadening exploration until the policy recovers informative reward variation.</p></div></div>
+        <div class="column"><div class="method-card"><h3 class="title is-4">Single-pass inference</h3><p>Selects direct or explicit reasoning without an external router, confidence threshold, or preliminary answer.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Accuracy–Token Trade-off</h2>
+      <div class="columns is-vcentered is-centered">
+        <div class="column is-6"><div class="content has-text-centered"><img class="paper-figure pareto-figure" src="./static/images/accuracy_token_pareto.png" alt="Accuracy and output-token Pareto frontier"></div></div>
+        <div class="column is-6">
+          <div class="content">
+            <p>AdaThinkV advances the empirical Pareto frontier across the unified video-reasoning evaluation suite.</p>
+            <div class="table-container">
+              <table class="table is-striped is-hoverable is-fullwidth result-table">
+                <thead><tr><th>Model</th><th>Mode</th><th>Accuracy</th><th>Tokens</th></tr></thead>
+                <tbody>
+                  <tr><td>Qwen3-VL-8B-Thinking</td><td>Think only</td><td>37.13</td><td>6184.98</td></tr>
+                  <tr><td>VideoAuto-R1-Qwen3</td><td>Auto</td><td>37.81</td><td>332.93</td></tr>
+                  <tr><td>AdaThinkV w/o VRPO</td><td>Auto</td><td>38.32</td><td><strong>235.73</strong></td></tr>
+                  <tr class="highlight-row"><td><strong>AdaThinkV</strong></td><td>Auto</td><td><strong>40.79</strong></td><td>257.20</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Variance Recovery</h2>
+      <div class="content has-text-centered">
+        <img class="paper-figure" src="./static/images/rollout_comparison.png" alt="Dynamic sampling and VRPO rollout allocation comparison">
+        <figcaption class="figure-caption"><strong>Dynamic sampling versus VRPO.</strong> Dynamic sampling discards zero-variance groups and resamples fresh prompts. VRPO keeps the difficult group and expands it progressively, preserving evidence while increasing the chance of finding successful trajectories.</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Qualitative Case Study</h2>
+      <div class="content has-text-centered">
+        <img class="paper-figure" src="./static/images/case_study.png" alt="AdaThinkV qualitative video-reasoning case study">
+        <figcaption class="figure-caption">AdaThinkV uses explicit reasoning when temporally separated evidence must be organized, while avoiding unnecessary long-form reasoning for simpler questions.</figcaption>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Citation">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{tian2026adathinkv,
+  title={AdaThinkV: Adaptive Thinking for Token-Efficient Video Reasoning},
+  author={Tian, Jingqi and Zhang, Haoji and Chen, Lin and Jin, Hongbo and Xu, Haonan and Zhu, Tianrui and Shui, Xingming and Ma, Shilin and Yang, Wenjing and Tang, Yansong},
+  journal={arXiv preprint},
+  year={2026}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container"><div class="columns is-centered"><div class="column is-8"><div class="content has-text-centered">
+      <p>&copy; Jingqi Tian 2026. Adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.</p>
+    </div></div></div></div>
+  </footer>
+</body>
+</html>

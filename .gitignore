@@ -1,0 +1,6 @@
+# Local CV source; never publish to the website repository.
+resume_en_jingqi.tex
+
+# macOS metadata
+.DS_Store
+._*

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="DDAVS: Delayed Bidirectional Alignment via Disentangled Audio Semantics for Audio-Visual Segmentation (ECCV 2026)">
+  <meta name="keywords" content="DDAVS">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DDAVS: Delayed Bidirectional Alignment via Disentangled Audio Semantics for Audio-Visual Segmentation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.ico"> -->
+  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h3 class="title is-3 publication-title" style="color: #c0392b;">
+              <b>ECCV 2026</b>
+            </h3>
+            <h1 class="title is-2 publication-title">
+              Delayed Bidirectional Alignment via Disentangled Audio Semantics for Audio-Visual Segmentation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://trilarflagz.github.io/">Jingqi Tian</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <!-- <a href="https://ideny42.github.io/"> -->
+                  Yiheng Du<sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://zhang9302002.github.io/">Haoji Zhang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://voyagewang.github.io/">Yuji Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Isaac Ning Lee<sup>1</sup>,</span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                Xulong Bai<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://xilluill.github.io/">Tianrui Zhu</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Jingxuan Niu<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://andytang15.github.io/">Yansong Tang</a><sup>1&#9993;</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Tsinghua Shenzhen International Graduate School, Tsinghua University,</span>
+              <span class="author-block"><sup>2</sup>Peking University.</span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <!-- <span class="author-block"><sup>*</sup>Equal contribution,</span> -->
+              <span class="author-block"><sup>&#9993;</sup>Corresponding authors.</span>
+              <!-- <span class="author-block"><sup>&dagger;</sup>Project leader.</span> -->
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2512.20117" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>ArXiv</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://github.com/Trilarflagz/DDAVS" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+          
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <div class="content has-text-centered">
+    <img src="./static/images/teaser.jpg" alt="DDAVS Teaser" width="35%">
+    <figcaption>
+      <strong>Qualitative comparison of our DDAVS model and previous methods.<br>  
+            DDAVS consistently outperforms previous approaches in challenging scenarios involving <br> 
+           multiple classes, multiple sources, small or distant sound sources, and off-screen audio cues.</strong>
+      </strong>
+    </figcaption>
+  </div> -->
+
+  <div class="container is-max-desktop">
+    <div class="content has-text-centered">
+      <img src="./static/images/intro.png" alt="DDAVS Introduction" width="80%">
+      <figcaption style="max-width: 80%; margin: 0 auto; text-align: left;">
+        <strong>
+          (a) Query-based unidirectional alignment generates audio queries but only aligns audio to visual features in one direction.<br>
+          (b) KNN-based bidirectional alignment retrieves audio semantics from a limited semantic space and applies bidirectional fusion across all layers.<br>
+          (c) Our bank-grounded query-based delayed bidirectional alignment anchors audio queries in a complete semantic space
+          and performs delayed bidirectional cross-attention only in later layers for more robust multimodal alignment.
+        </strong>
+      </figcaption>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- TL;DR. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">TL;DR</h2>
+          <div class="content has-text-justified">
+            <p>
+            <strong>
+              We propose DDAVS, an audio-visual segmentation framework that disentangles audio semantics and performs
+              delayed bidirectional modality alignment to robustly localize sounding objects at the pixel level.
+              DDAVS introduces an Audio Query Module with a prototype memory bank, a contrastive optimization module, and a multi-stage Audio-Visual Alignment Module,
+              achieving state-of-the-art performance on AVS-Objects and VPO benchmarks, especially in challenging multi-source, subtle, distant, and off-screen scenarios.
+            </strong>
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ TL;DR. -->
+
+
+      <div class="content has-text-centered">
+        <img src="./static/images/teaser.png" alt="DDAVS Teaser" width="80%">
+        <figcaption>
+          <strong>
+            DDAVS consistently outperforms previous approaches in challenging scenarios.
+          </strong>
+        </figcaption>
+      </div>
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Audio–Visual Segmentation (AVS) aims to localize sound-producing objects at the pixel level by integrating
+              auditory and visual cues. However, existing methods often struggle with multi-source entanglement and
+              audio–visual misalignment, leading to a dominance bias toward acoustically or visually salient objects
+              (i.e., louder or larger ones) at the expense of subtler or co-occurring sources.
+              To address these challenges, we propose DDAVS: Delayed Bidirectional Alignment via Disentangled Audio Semantics
+              for Audio-Visual Segmentation. To mitigate multi-source entanglement,
+              DDAVS employs learnable queries to extract audio semantics and anchor them within a structured semantic space derived
+              from an audio prototype memory bank. This process is further optimized through contrastive learning to enhance discriminability
+              and robustness. To alleviate audio–visual misalignment, DDAVS introduces dual cross-attention with delayed modality
+              interaction, improving the robustness of multimodal alignment. Extensive experiments on the AVS-Objects and VPO
+              benchmarks demonstrate that DDAVS achieves state-of-the-art performance across
+              single-source, multi-source, and multi-class multi-instance scenarios. These results validate the effectiveness and generalization
+              ability of our framework under challenging real-world audio–visual segmentation conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <!-- Main text. -->
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3 has-text-centered">Pipeline</h2>
+
+          <div class="content has-text-centered">
+            <img src="./static/images/overview.png" alt="Pipeline" width="80%">
+            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; text-align: left;">
+              <strong>Overview of DDAVS framework.</strong><br>
+              (a) The Audio Query Module (AQM) encodes original and augmented waveforms
+              into disentangled semantic queries anchored to a prototype memory bank.<br>
+              (b) The Contrastive Optimization Module (COM) enhances query robustness through contrastive learning,
+              used only during training.<br>
+              (c) The Audio-Visual Alignment Module (AVAM) fuses audio queries with visual features via stacked alignment blocks,
+              and a lightweight decoder outputs the sound-conditioned segmentation masks.
+            </figcaption>
+          </div>
+
+          <h2 class="title is-3 has-text-centered">Results</h2>
+
+          <div class="content has-text-centered">
+            <img src="./static/images/results1.png" alt="Results" width="80%">
+          </div>
+
+          <div class="content has-text-centered">
+            <img src="./static/images/results2.png" alt="Results" width="80%">
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/results3.png" alt="Results" width="80%">
+          </div>
+
+
+          <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
+
+          <div class="content has-text-centered">
+            <img src="./static/images/ablation_component.png" alt="Component ablation" width="78%">
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/ablation.png" alt="Ablation study" width="78%">
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/ablation_tsne.png" alt="t-SNE visualization of audio representations" width="85%">
+            <figcaption style="max-width: 85%; margin: 0.5rem auto 0; text-align: left;">
+              <strong>t-SNE visualization of audio representations.</strong><br>
+              (a) The baseline produces entangled clusters across categories, while DDAVS forms clearly disentangled source clusters.<br>
+              (b) The baseline collapses mixture audio toward the dominant source, while DDAVS achieves smooth interpolation between components.<br>
+              (c) The baseline exhibits cross-domain fragmentation, while DDAVS achieves consistent cross-domain alignment between AVSBench and ESC50.
+            </figcaption>
+          </div>
+
+          <h2 class="title is-3 has-text-centered">Case Study</h2>
+          <p class="has-text-centered">
+            Qualitative results of DDAVS across the four challenging AVS scenarios.
+          </p>
+
+          <div class="content has-text-centered">
+            <img src="./static/images/qual_mul_class.png" alt="Multi-class sources" width="80%">
+            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; white-space: nowrap;">
+              <strong>Multi-class sources.</strong>
+              DDAVS segments each distinct sounding category while suppressing silent objects.
+            </figcaption>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/qual_mul_instace.png" alt="Multi-instance sources" width="80%">
+            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; white-space: nowrap;">
+              <strong>Multi-instance sources.</strong>
+              DDAVS separates multiple instances of the same sounding class without merging them.
+            </figcaption>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/qual_distant.png" alt="Small or distant sources" width="80%">
+            <figcaption style="max-width: 80%; margin: 0.5rem auto 0;">
+              <strong>Small / distant sources.</strong>
+              DDAVS localizes small or far-away sound sources that baselines tend to miss.
+            </figcaption>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/qual_out.png" alt="Off-screen sources" width="80%">
+            <figcaption style="max-width: 80%; margin: 0.5rem auto 0;">
+              <strong>Off-screen sources.</strong>
+              DDAVS suppresses spurious activations when the sound source is off-screen.
+            </figcaption>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="Citation">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <pre><code>@article{tian2025ddavs,
+  title={DDAVS: Disentangled Audio Semantics and Delayed Bidirectional Alignment for Audio-Visual Segmentation},
+  author={Tian, Jingqi and Du, Yiheng and Zhang, Haoji and Wang, Yuji and Lee, Isaac Ning and Bai, Xulong and Zhu, Tianrui and Niu, Jingxuan and Tang, Yansong},
+  journal={arXiv preprint arXiv:2512.20117},
+  year={2025}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              &copy; Jingqi Tian 2026. Adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
