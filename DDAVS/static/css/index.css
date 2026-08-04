@@ -741,26 +741,29 @@ body.project-page {
 }
 
 .case-grid {
-  max-width: 1004px;
+  max-width: 860px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.reading-column {
+.column.reading-column {
+  flex: none;
   width: 100%;
   max-width: 860px;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 .intro-panel {
-  max-width: 1040px;
+  max-width: 860px;
 }
 
 .teaser-panel {
-  max-width: 980px;
+  max-width: 860px;
 }
 
 .pipeline-panel {
-  max-width: 960px;
+  max-width: 860px;
 }
 
 .result-panel {
@@ -772,7 +775,7 @@ body.project-page {
 }
 
 .intro-panel .figure-caption {
-  max-width: 980px;
+  max-width: 860px;
 }
 
 .pipeline-panel .figure-caption,
@@ -787,6 +790,11 @@ body.project-page {
 .citation-section {
   color: #4a4a4a;
   background: #fff;
+}
+
+.citation-section .container {
+  width: 100%;
+  max-width: 860px !important;
 }
 
 .citation-section .title {
