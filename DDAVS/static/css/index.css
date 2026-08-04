@@ -231,39 +231,29 @@ body.project-page {
 }
 
 .venue-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 1.35rem;
-  padding: 0.62rem 1.2rem;
-  border: 1px solid rgba(154, 37, 24, 0.35);
-  border-radius: 999px;
-  color: #fff;
-  background: linear-gradient(120deg, #d84b31 0%, #b52e24 100%);
-  box-shadow: 0 9px 24px rgba(181, 46, 36, 0.24);
+  margin-bottom: 1rem;
+  color: #c8322a;
   font-family: 'Google Sans', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-}
-
-.venue-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+  font-size: clamp(1.75rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.15;
 }
 
 .project-hero .publication-title {
-  max-width: 1050px;
+  max-width: 1160px;
   margin-right: auto;
   margin-bottom: 1.6rem !important;
   margin-left: auto;
   color: var(--ddavs-ink);
-  font-size: clamp(1.85rem, 3.5vw, 2.75rem);
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
   line-height: 1.13;
   letter-spacing: -0.035em;
+}
+
+.title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .project-hero .author-row,
@@ -514,6 +504,10 @@ body.project-page {
     line-height: 1.18;
   }
 
+  .title-line {
+    white-space: normal;
+  }
+
   .project-hero .publication-authors {
     font-size: 1rem !important;
   }
@@ -557,5 +551,243 @@ body.project-page {
   .citation-section pre {
     padding: 1rem;
     font-size: 0.76rem;
+  }
+}
+
+/* Keep DDAVS visually consistent with the AdaThinkV project page. */
+body.project-page {
+  color: #2f3640;
+  background: #fff;
+}
+
+.project-hero {
+  overflow: visible;
+  border-bottom: 0;
+  background: #fff;
+}
+
+.project-hero::after {
+  display: none;
+}
+
+.project-hero .hero-body {
+  padding: 3rem 1.5rem 2.25rem;
+}
+
+.venue-label {
+  margin-bottom: 0.8rem !important;
+  color: #b3342b !important;
+  font-size: 2rem !important;
+  font-weight: 700;
+  letter-spacing: 0.04em !important;
+  line-height: 1.2;
+}
+
+.project-hero .publication-title.is-2 {
+  max-width: 1160px;
+  margin-bottom: 1.5rem !important;
+  color: #363636;
+  font-size: clamp(1.75rem, 3vw, 2.45rem);
+  line-height: 1.16;
+  letter-spacing: -0.025em;
+}
+
+.project-hero .author-row,
+.project-hero .affiliation-row,
+.project-hero .contribution-row {
+  max-width: 920px;
+}
+
+.project-hero .author-row {
+  color: #363636;
+  line-height: 1.65;
+}
+
+.project-hero .affiliation-row {
+  margin-top: 0.45rem;
+  color: #4a4a4a;
+}
+
+.project-hero .contribution-row {
+  margin-top: 0.35rem;
+  color: #4a4a4a;
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+  font-weight: 400;
+}
+
+.project-actions .publication-links {
+  gap: 0;
+  margin-top: 0;
+}
+
+.project-actions .link-block a {
+  min-width: 0;
+  margin: 5px 2px;
+  border: 0;
+  background: #363636;
+  box-shadow: none;
+  transition: background 160ms ease;
+}
+
+.project-actions .link-block a:hover {
+  background: #1f1f1f;
+  box-shadow: none;
+  transform: none;
+}
+
+.project-page .section {
+  padding: 3rem 1.5rem;
+}
+
+.intro-section {
+  padding-top: 1rem !important;
+  padding-bottom: 2rem !important;
+}
+
+.summary-section {
+  border: 0;
+  background: #fff;
+}
+
+.evidence-section {
+  background: #f7f8fa;
+}
+
+.project-page .title.is-3 {
+  color: #363636;
+  font-size: 2rem;
+  letter-spacing: normal;
+}
+
+.evidence-section .title.is-3 {
+  margin-top: 4rem;
+}
+
+.figure-panel,
+.intro-panel,
+.teaser-panel,
+.pipeline-panel,
+.result-panel,
+.portrait-panel,
+.case-panel {
+  max-width: none;
+  margin-right: auto;
+  margin-bottom: 2.75rem;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.project-figure {
+  width: 92%;
+  border-radius: 8px;
+}
+
+.intro-panel .project-figure,
+.teaser-panel .project-figure,
+.pipeline-panel .project-figure {
+  width: 96%;
+}
+
+.portrait-figure {
+  width: 78%;
+  max-width: 590px;
+}
+
+.figure-caption {
+  max-width: 90%;
+  margin: 0.75rem auto 0;
+  padding: 0;
+  border: 0;
+  color: #4a4a4a;
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.summary-card {
+  padding: 1.1rem 1.25rem;
+  border: 0;
+  border-left: 4px solid #d97932;
+  border-radius: 6px;
+  background: #fff7ed;
+  box-shadow: none;
+}
+
+.abstract-card {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  line-height: 1.65;
+}
+
+.teaser-panel {
+  margin-top: 2.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.case-panel {
+  margin-bottom: 1rem;
+}
+
+.citation-section {
+  color: #4a4a4a;
+  background: #fff;
+}
+
+.citation-section .title {
+  color: #363636;
+}
+
+.citation-section pre {
+  padding: 1.25rem 1.5rem;
+  border: 0;
+  border-radius: 6px;
+  color: #4a4a4a;
+  background: #f5f5f5;
+  box-shadow: none;
+}
+
+.project-page .footer {
+  padding: 3rem 1.5rem 6rem;
+  color: #4a4a4a;
+  background: #fafafa;
+}
+
+@media screen and (max-width: 768px) {
+  .project-hero .hero-body {
+    padding: 2.5rem 1rem 1.75rem;
+  }
+
+  .venue-label {
+    font-size: 1.65rem !important;
+  }
+
+  .project-hero .publication-title.is-2 {
+    font-size: 1.65rem;
+  }
+
+  .project-page .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .project-figure,
+  .intro-panel .project-figure,
+  .teaser-panel .project-figure,
+  .pipeline-panel .project-figure,
+  .portrait-figure {
+    width: 100%;
+  }
+
+  .figure-caption {
+    max-width: 96%;
+    font-size: 0.9rem;
   }
 }
