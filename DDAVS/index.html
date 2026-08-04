@@ -30,9 +30,6 @@
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <!-- <link rel="icon" href="./static/images/favicon.ico"> -->
-  <!-- <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>"> -->
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
@@ -40,25 +37,22 @@
   <script src="./static/js/index.js"></script>
 </head>
 
-<body>
+<body class="project-page">
 
-  <section class="hero">
+  <section class="hero project-hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h3 class="title is-3 publication-title" style="color: #c0392b;">
-              <b>ECCV 2026</b>
-            </h3>
+            <div class="venue-badge"><span class="venue-dot"></span>ECCV 2026</div>
             <h1 class="title is-2 publication-title">
               Delayed Bidirectional Alignment via Disentangled Audio Semantics for Audio-Visual Segmentation
             </h1>
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors author-row">
               <span class="author-block">
                 <a href="https://trilarflagz.github.io/">Jingqi Tian</a><sup>1</sup>,</span>
               <span class="author-block">
-                <!-- <a href="https://ideny42.github.io/"> -->
-                  Yiheng Du<sup>2</sup>,</span>
+                Yiheng Du<sup>2</sup>,</span>
               <span class="author-block">
                 <a href="https://zhang9302002.github.io/">Haoji Zhang</a><sup>1</sup>,</span>
               <span class="author-block">
@@ -66,7 +60,7 @@
               <span class="author-block">
                 Isaac Ning Lee<sup>1</sup>,</span>
             </div>
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors author-row">
               <span class="author-block">
                 Xulong Bai<sup>1</sup>,</span>
               <span class="author-block">
@@ -77,18 +71,16 @@
                 <a href="https://andytang15.github.io/">Yansong Tang</a><sup>1&#9993;</sup></span>
             </div>
 
-            <div class="is-size-5 publication-authors">
+            <div class="is-size-5 publication-authors affiliation-row">
               <span class="author-block"><sup>1</sup>Tsinghua Shenzhen International Graduate School, Tsinghua University,</span>
               <span class="author-block"><sup>2</sup>Peking University.</span>
             </div>
 
-            <div class="is-size-5 publication-authors">
-              <!-- <span class="author-block"><sup>*</sup>Equal contribution,</span> -->
+            <div class="is-size-6 publication-authors contribution-row">
               <span class="author-block"><sup>&#9993;</sup>Corresponding authors.</span>
-              <!-- <span class="author-block"><sup>&dagger;</sup>Project leader.</span> -->
             </div>
 
-            <div class="column has-text-centered">
+            <div class="column has-text-centered project-actions">
               <div class="publication-links">
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/2512.20117" class="external-link button is-normal is-rounded is-dark">
@@ -116,38 +108,29 @@
     </div>
   </section>
 
-
-  <!-- <div class="content has-text-centered">
-    <img src="./static/images/teaser.jpg" alt="DDAVS Teaser" width="35%">
-    <figcaption>
-      <strong>Qualitative comparison of our DDAVS model and previous methods.<br>  
-            DDAVS consistently outperforms previous approaches in challenging scenarios involving <br> 
-           multiple classes, multiple sources, small or distant sound sources, and off-screen audio cues.</strong>
-      </strong>
-    </figcaption>
-  </div> -->
-
-  <div class="container is-max-desktop">
-    <div class="content has-text-centered">
-      <img src="./static/images/intro.png" alt="DDAVS Introduction" width="80%">
-      <figcaption style="max-width: 80%; margin: 0 auto; text-align: left;">
-        <strong>
-          (a) Query-based unidirectional alignment generates audio queries but only aligns audio to visual features in one direction.<br>
-          (b) KNN-based bidirectional alignment retrieves audio semantics from a limited semantic space and applies bidirectional fusion across all layers.<br>
-          (c) Our bank-grounded query-based delayed bidirectional alignment anchors audio queries in a complete semantic space
-          and performs delayed bidirectional cross-attention only in later layers for more robust multimodal alignment.
-        </strong>
-      </figcaption>
+  <section class="section intro-section">
+    <div class="container is-max-desktop">
+      <figure class="figure-panel intro-panel">
+        <img class="project-figure" src="./static/images/intro.png" alt="DDAVS Introduction">
+        <figcaption class="figure-caption">
+          <strong>
+            (a) Query-based unidirectional alignment generates audio queries but only aligns audio to visual features in one direction.<br>
+            (b) KNN-based bidirectional alignment retrieves audio semantics from a limited semantic space and applies bidirectional fusion across all layers.<br>
+            (c) Our bank-grounded query-based delayed bidirectional alignment anchors audio queries in a complete semantic space
+            and performs delayed bidirectional cross-attention only in later layers for more robust multimodal alignment.
+          </strong>
+        </figcaption>
+      </figure>
     </div>
-  </div>
+  </section>
 
-  <section class="section">
+  <section class="section summary-section">
     <div class="container is-max-desktop">
       <!-- TL;DR. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">TL;DR</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-justified summary-card">
             <p>
             <strong>
               We propose DDAVS, an audio-visual segmentation framework that disentangles audio semantics and performs
@@ -162,20 +145,20 @@
       <!--/ TL;DR. -->
 
 
-      <div class="content has-text-centered">
-        <img src="./static/images/teaser.png" alt="DDAVS Teaser" width="80%">
-        <figcaption>
+      <figure class="figure-panel teaser-panel">
+        <img class="project-figure" src="./static/images/teaser.png" alt="DDAVS Teaser">
+        <figcaption class="figure-caption is-centered-caption">
           <strong>
             DDAVS consistently outperforms previous approaches in challenging scenarios.
           </strong>
         </figcaption>
-      </div>
+      </figure>
 
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+          <div class="content has-text-justified abstract-card">
             <p>
               Audio–Visual Segmentation (AVS) aims to localize sound-producing objects at the pixel level by integrating
               auditory and visual cues. However, existing methods often struggle with multi-source entanglement and
@@ -197,7 +180,7 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section evidence-section">
     <div class="container is-max-desktop">
 
       <!-- Main text. -->
@@ -205,9 +188,9 @@
         <div class="column is-full-width">
           <h2 class="title is-3 has-text-centered">Pipeline</h2>
 
-          <div class="content has-text-centered">
-            <img src="./static/images/overview.png" alt="Pipeline" width="80%">
-            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; text-align: left;">
+          <figure class="figure-panel pipeline-panel">
+            <img class="project-figure" src="./static/images/overview.png" alt="Pipeline">
+            <figcaption class="figure-caption">
               <strong>Overview of DDAVS framework.</strong><br>
               (a) The Audio Query Module (AQM) encodes original and augmented waveforms
               into disentangled semantic queries anchored to a prototype memory bank.<br>
@@ -216,72 +199,82 @@
               (c) The Audio-Visual Alignment Module (AVAM) fuses audio queries with visual features via stacked alignment blocks,
               and a lightweight decoder outputs the sound-conditioned segmentation masks.
             </figcaption>
-          </div>
+          </figure>
 
           <h2 class="title is-3 has-text-centered">Results</h2>
 
-          <div class="content has-text-centered">
-            <img src="./static/images/results1.png" alt="Results" width="80%">
-          </div>
+          <figure class="figure-panel result-panel">
+            <img class="project-figure result-figure" src="./static/images/results1.png" alt="Main quantitative results">
+          </figure>
 
-          <div class="content has-text-centered">
-            <img src="./static/images/results2.png" alt="Results" width="80%">
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/results3.png" alt="Results" width="80%">
-          </div>
+          <figure class="figure-panel result-panel">
+            <img class="project-figure result-figure" src="./static/images/results2.png" alt="Additional quantitative results">
+          </figure>
+          <figure class="figure-panel result-panel">
+            <img class="project-figure result-figure" src="./static/images/results3.png" alt="Cross-dataset quantitative results">
+          </figure>
 
 
           <h2 class="title is-3 has-text-centered">Ablation Studies</h2>
 
-          <div class="content has-text-centered">
-            <img src="./static/images/ablation_component.png" alt="Component ablation" width="78%">
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/ablation.png" alt="Ablation study" width="78%">
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/ablation_tsne.png" alt="t-SNE visualization of audio representations" width="85%">
-            <figcaption style="max-width: 85%; margin: 0.5rem auto 0; text-align: left;">
+          <figure class="figure-panel result-panel">
+            <img class="project-figure result-figure" src="./static/images/ablation_component.png" alt="Component ablation">
+          </figure>
+          <figure class="figure-panel result-panel portrait-panel">
+            <img class="project-figure portrait-figure" src="./static/images/ablation.png" alt="Ablation study">
+          </figure>
+          <figure class="figure-panel result-panel">
+            <img class="project-figure result-figure" src="./static/images/ablation_tsne.png" alt="t-SNE visualization of audio representations">
+            <figcaption class="figure-caption">
               <strong>t-SNE visualization of audio representations.</strong><br>
               (a) The baseline produces entangled clusters across categories, while DDAVS forms clearly disentangled source clusters.<br>
               (b) The baseline collapses mixture audio toward the dominant source, while DDAVS achieves smooth interpolation between components.<br>
               (c) The baseline exhibits cross-domain fragmentation, while DDAVS achieves consistent cross-domain alignment between AVSBench and ESC50.
             </figcaption>
-          </div>
+          </figure>
 
           <h2 class="title is-3 has-text-centered">Case Study</h2>
           <p class="has-text-centered">
             Qualitative results of DDAVS across the four challenging AVS scenarios.
           </p>
 
-          <div class="content has-text-centered">
-            <img src="./static/images/qual_mul_class.png" alt="Multi-class sources" width="80%">
-            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; white-space: nowrap;">
-              <strong>Multi-class sources.</strong>
-              DDAVS segments each distinct sounding category while suppressing silent objects.
-            </figcaption>
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/qual_mul_instace.png" alt="Multi-instance sources" width="80%">
-            <figcaption style="max-width: 80%; margin: 0.5rem auto 0; white-space: nowrap;">
-              <strong>Multi-instance sources.</strong>
-              DDAVS separates multiple instances of the same sounding class without merging them.
-            </figcaption>
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/qual_distant.png" alt="Small or distant sources" width="80%">
-            <figcaption style="max-width: 80%; margin: 0.5rem auto 0;">
-              <strong>Small / distant sources.</strong>
-              DDAVS localizes small or far-away sound sources that baselines tend to miss.
-            </figcaption>
-          </div>
-          <div class="content has-text-centered">
-            <img src="./static/images/qual_out.png" alt="Off-screen sources" width="80%">
-            <figcaption style="max-width: 80%; margin: 0.5rem auto 0;">
-              <strong>Off-screen sources.</strong>
-              DDAVS suppresses spurious activations when the sound source is off-screen.
-            </figcaption>
+          <div class="columns is-multiline case-grid">
+            <div class="column is-half-desktop">
+              <figure class="figure-panel case-panel">
+                <img class="project-figure" src="./static/images/qual_mul_class.png" alt="Multi-class sources">
+                <figcaption class="figure-caption">
+                  <strong>Multi-class sources.</strong>
+                  DDAVS segments each distinct sounding category while suppressing silent objects.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="column is-half-desktop">
+              <figure class="figure-panel case-panel">
+                <img class="project-figure" src="./static/images/qual_mul_instace.png" alt="Multi-instance sources">
+                <figcaption class="figure-caption">
+                  <strong>Multi-instance sources.</strong>
+                  DDAVS separates multiple instances of the same sounding class without merging them.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="column is-half-desktop">
+              <figure class="figure-panel case-panel">
+                <img class="project-figure" src="./static/images/qual_distant.png" alt="Small or distant sources">
+                <figcaption class="figure-caption">
+                  <strong>Small / distant sources.</strong>
+                  DDAVS localizes small or far-away sound sources that baselines tend to miss.
+                </figcaption>
+              </figure>
+            </div>
+            <div class="column is-half-desktop">
+              <figure class="figure-panel case-panel">
+                <img class="project-figure" src="./static/images/qual_out.png" alt="Off-screen sources">
+                <figcaption class="figure-caption">
+                  <strong>Off-screen sources.</strong>
+                  DDAVS suppresses spurious activations when the sound source is off-screen.
+                </figcaption>
+              </figure>
+            </div>
           </div>
 
         </div>
@@ -289,7 +282,7 @@
     </div>
   </section>
 
-  <section class="section" id="Citation">
+  <section class="section citation-section" id="Citation">
     <div class="container is-max-desktop content">
       <h2 class="title">Citation</h2>
       <pre><code>@article{tian2025ddavs,
