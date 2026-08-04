@@ -110,21 +110,9 @@ papertitle {
   font-weight: 700
 }
 
-.adathinkv-figure-cell {
-  width: 34% !important;
-  max-width: 34% !important;
-  padding-right: 12px !important;
-  padding-left: 12px !important;
-}
-
-.adathinkv-content-cell {
-  width: 66% !important;
-}
-
 .adathinkv-pub-figure {
-  aspect-ratio: 2.65 / 1;
-  object-fit: cover;
-  object-position: center;
+  aspect-ratio: 2.35 / 1;
+  object-fit: fill;
 }
 
 name {
