@@ -116,6 +116,23 @@ papertitle {
   white-space: nowrap;
 }
 
+.adathinkv-figure-cell {
+  width: 34% !important;
+  max-width: 34% !important;
+  padding-right: 12px !important;
+  padding-left: 12px !important;
+}
+
+.adathinkv-content-cell {
+  width: 66% !important;
+}
+
+.adathinkv-pub-figure {
+  aspect-ratio: 2.65 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
@@ -155,6 +172,11 @@ span.highlight {
   .single-line-publication-title {
     font-size: 14px;
     white-space: normal;
+  }
+
+  .adathinkv-pub-figure {
+    aspect-ratio: auto;
+    object-fit: contain;
   }
 
   body,
