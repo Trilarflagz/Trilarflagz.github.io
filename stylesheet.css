@@ -110,6 +110,12 @@ papertitle {
   font-weight: 700
 }
 
+.single-line-publication-title {
+  font-size: 12px;
+  letter-spacing: -0.08px;
+  white-space: nowrap;
+}
+
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
@@ -146,6 +152,11 @@ span.highlight {
 
 /* Mobile-friendly layout tweaks */
 @media (max-width: 768px) {
+  .single-line-publication-title {
+    font-size: 14px;
+    white-space: normal;
+  }
+
   body,
   td,
   th,
