@@ -50,7 +50,12 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="./paper.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <a href="https://arxiv.org/abs/2608.01980" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="ai ai-arxiv"></i></span><span>ArXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2608.01980" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span>
                   </a>
                 </span>
@@ -68,7 +73,7 @@
   </section>
 
   <div class="container is-max-desktop">
-    <div class="content has-text-centered">
+    <div class="content has-text-centered visual-wide">
       <img class="paper-figure wide-figure" src="./static/images/teaser.png" alt="AdaThinkV motivation and qualitative comparison">
       <figcaption class="figure-caption">
         <strong>Why does response-mode selection matter?</strong>
@@ -80,7 +85,7 @@
   <section class="section compact-section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-four-fifths reading-column">
           <h2 class="title is-3">TL;DR</h2>
           <div class="content has-text-justified tldr-box">
             <p><strong>AdaThinkV teaches a video MLLM to choose between direct answering and explicit reasoning for each question.</strong> ThinkGain estimates whether the accuracy benefit of reasoning justifies its extra output length, while Variance Recovery Policy Optimization (VRPO) expands difficult rollout groups to recover useful reinforcement-learning signals.</p>
@@ -96,7 +101,7 @@
       </div>
 
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column is-four-fifths reading-column">
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>Chain-of-thought reasoning can improve performance on difficult video questions but often wastes decoding tokens on simple ones. AdaThinkV is an adaptive framework for video reasoning that learns whether to reason explicitly without offline difficulty labels, manually tuned confidence thresholds, or an external router. During reinforcement learning, it samples matched rollouts in explicit-reasoning and direct-answering modes. ThinkGain estimates the prompt-level utility of explicit reasoning by balancing its accuracy gain against additional response length, supervising both conditional generation and autonomous mode selection. For difficult prompts, VRPO retains and progressively expands unsuccessful, low-dispersion rollout groups to recover informative signals from prompts that are difficult yet solvable. At inference, AdaThinkV selects a response mode and generates the response in a single autoregressive sequence.</p>
@@ -109,7 +114,7 @@
   <section class="section alt-section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Method</h2>
-      <div class="content has-text-centered">
+      <div class="content has-text-centered visual-standard">
         <img class="paper-figure" src="./static/images/method_overview.png" alt="AdaThinkV training and inference pipeline">
         <figcaption class="figure-caption"><strong>AdaThinkV training and inference pipeline.</strong> ThinkGain constructs mode supervision from prompt-matched <code>THINK</code>/<code>ANSWER</code> branches. VRPO progressively allocates more rollouts to groups with weak reward contrast. At inference, the model emits a mode marker and response in one autoregressive sequence.</figcaption>
       </div>
@@ -149,7 +154,7 @@
   <section class="section alt-section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Variance Recovery</h2>
-      <div class="content has-text-centered">
+      <div class="content has-text-centered visual-medium">
         <img class="paper-figure" src="./static/images/rollout_comparison.png" alt="Dynamic sampling and VRPO rollout allocation comparison">
         <figcaption class="figure-caption"><strong>Dynamic sampling versus VRPO.</strong> Dynamic sampling discards zero-variance groups and resamples fresh prompts. VRPO keeps the difficult group and expands it progressively, preserving evidence while increasing the chance of finding successful trajectories.</figcaption>
       </div>
@@ -159,7 +164,7 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Qualitative Case Study</h2>
-      <div class="content has-text-centered">
+      <div class="content has-text-centered visual-wide">
         <img class="paper-figure" src="./static/images/case_study.png" alt="AdaThinkV qualitative video-reasoning case study">
         <figcaption class="figure-caption">AdaThinkV uses explicit reasoning when temporally separated evidence must be organized, while avoiding unnecessary long-form reasoning for simpler questions.</figcaption>
       </div>

@@ -203,21 +203,43 @@ img {
 .note-row { margin-top: 0.35rem; }
 
 .paper-figure {
-  width: 92%;
+  width: 100%;
+  max-width: 980px;
   height: auto;
   border-radius: 8px;
 }
 
-.wide-figure { width: 96%; }
-.pareto-figure { width: 88%; max-width: 620px; }
+.wide-figure { width: 100%; }
+.pareto-figure { width: 100%; max-width: 620px; }
 
 .figure-caption {
   display: block;
-  max-width: 90%;
+  width: 100%;
+  max-width: 980px;
   margin: 0.75rem auto 0;
   text-align: left;
   color: #4a4a4a;
   line-height: 1.55;
+}
+
+.reading-column {
+  width: 100%;
+  max-width: 860px;
+}
+
+.visual-wide .paper-figure,
+.visual-wide .figure-caption {
+  max-width: 1040px;
+}
+
+.visual-standard .paper-figure,
+.visual-standard .figure-caption {
+  max-width: 960px;
+}
+
+.visual-medium .paper-figure,
+.visual-medium .figure-caption {
+  max-width: 900px;
 }
 
 .compact-section { padding-top: 2.5rem; }

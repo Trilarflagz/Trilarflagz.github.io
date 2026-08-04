@@ -746,6 +746,44 @@ body.project-page {
   margin-left: auto;
 }
 
+.reading-column {
+  width: 100%;
+  max-width: 860px;
+}
+
+.intro-panel {
+  max-width: 1040px;
+}
+
+.teaser-panel {
+  max-width: 980px;
+}
+
+.pipeline-panel {
+  max-width: 960px;
+}
+
+.result-panel {
+  max-width: 860px;
+}
+
+.portrait-panel {
+  max-width: 660px;
+}
+
+.intro-panel .figure-caption {
+  max-width: 980px;
+}
+
+.pipeline-panel .figure-caption,
+.result-panel .figure-caption {
+  max-width: 820px;
+}
+
+.case-panel .figure-caption {
+  max-width: 100%;
+}
+
 .citation-section {
   color: #4a4a4a;
   background: #fff;
