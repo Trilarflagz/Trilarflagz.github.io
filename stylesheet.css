@@ -110,21 +110,6 @@ papertitle {
   font-weight: 700
 }
 
-.single-line-title-wrapper {
-  position: relative;
-  height: 18px;
-  overflow: visible;
-}
-
-.single-line-publication-title {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 14px;
-  line-height: 18px;
-  white-space: nowrap;
-}
-
 .adathinkv-figure-cell {
   width: 34% !important;
   max-width: 34% !important;
@@ -178,17 +163,6 @@ span.highlight {
 
 /* Mobile-friendly layout tweaks */
 @media (max-width: 768px) {
-  .single-line-publication-title {
-    position: static;
-    font-size: 14px;
-    line-height: inherit;
-    white-space: normal;
-  }
-
-  .single-line-title-wrapper {
-    height: auto;
-  }
-
   .adathinkv-pub-figure {
     aspect-ratio: auto;
     object-fit: contain;
