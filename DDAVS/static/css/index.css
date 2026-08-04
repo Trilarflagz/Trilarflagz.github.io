@@ -673,7 +673,8 @@ body.project-page {
 .result-panel,
 .portrait-panel,
 .case-panel {
-  max-width: none;
+  width: 100%;
+  max-width: 980px;
   margin-right: auto;
   margin-bottom: 2.75rem;
   margin-left: auto;
@@ -685,23 +686,24 @@ body.project-page {
 }
 
 .project-figure {
-  width: 92%;
+  width: 100%;
   border-radius: 8px;
 }
 
 .intro-panel .project-figure,
 .teaser-panel .project-figure,
 .pipeline-panel .project-figure {
-  width: 96%;
+  width: 100%;
 }
 
 .portrait-figure {
-  width: 78%;
-  max-width: 590px;
+  width: 100%;
+  max-width: 100%;
 }
 
 .figure-caption {
-  max-width: 90%;
+  width: 100%;
+  max-width: 100%;
   margin: 0.75rem auto 0;
   padding: 0;
   border: 0;
@@ -734,7 +736,14 @@ body.project-page {
 }
 
 .case-panel {
+  max-width: none;
   margin-bottom: 1rem;
+}
+
+.case-grid {
+  max-width: 1004px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .citation-section {
