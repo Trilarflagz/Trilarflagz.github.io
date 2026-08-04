@@ -110,9 +110,18 @@ papertitle {
   font-weight: 700
 }
 
+.single-line-title-wrapper {
+  position: relative;
+  height: 18px;
+  overflow: visible;
+}
+
 .single-line-publication-title {
-  font-size: 12px;
-  letter-spacing: -0.08px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  line-height: 18px;
   white-space: nowrap;
 }
 
@@ -170,8 +179,14 @@ span.highlight {
 /* Mobile-friendly layout tweaks */
 @media (max-width: 768px) {
   .single-line-publication-title {
+    position: static;
     font-size: 14px;
+    line-height: inherit;
     white-space: normal;
+  }
+
+  .single-line-title-wrapper {
+    height: auto;
   }
 
   .adathinkv-pub-figure {
