@@ -115,6 +115,11 @@ papertitle {
   object-fit: fill;
 }
 
+.videomem-pub-figure {
+  aspect-ratio: 16 / 9;
+  object-fit: fill;
+}
+
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
