@@ -120,6 +120,74 @@ papertitle {
   object-fit: fill;
 }
 
+.opcad-pub-figure {
+  aspect-ratio: 2.28 / 1;
+  object-fit: fill;
+}
+
+.citation-modal {
+  width: min(720px, calc(100vw - 32px));
+  max-width: 720px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  color: #1f2937;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.28);
+}
+
+.citation-modal::backdrop {
+  background: rgba(15, 23, 42, 0.48);
+}
+
+.citation-modal-content {
+  padding: 20px;
+}
+
+.citation-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.citation-modal-title {
+  margin: 0;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.citation-modal-close {
+  border: 0;
+  border-radius: 6px;
+  padding: 2px 9px;
+  background: #eef2f7;
+  color: #374151;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.citation-modal-close:hover,
+.citation-modal-close:focus {
+  background: #dbe5f0;
+}
+
+.citation-modal pre {
+  max-height: 60vh;
+  margin: 0;
+  overflow: auto;
+  padding: 14px;
+  border-radius: 6px;
+  background: #f6f8fa;
+  color: #111827;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
 name {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 32px;
